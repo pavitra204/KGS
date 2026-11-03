@@ -1,0 +1,30 @@
+
+print("DRESS SHOPPING STORE")
+amount = float(input("Enter the dress amount (Rs): "))
+if amount < 1000:
+    print("\nNo discount available for amount below Rs.1000")
+    discount_percent = 0
+    discount = 0
+    final_amount = amount
+elif amount >= 1000 and amount <= 5000:
+    discount_percent = 10
+    discount = amount * 10 / 100
+    final_amount = amount - discount
+elif amount > 5000 and amount <= 10000:
+    discount_percent = 15
+    discount = amount * 15 / 100
+    final_amount = amount - discount
+elif amount > 10000:
+    discount_percent = 20
+    discount = amount * 20 / 100
+    final_amount = amount - discount
+else:
+    print("Invalid amount entered!")
+    exit()
+print("BILL RECEIPT")
+print("Original Price",amount)
+print("Discount",discount_percent)
+print("Discount Amount",discount)
+print("Final Amount",final_amount)
+print("Thank you for shopping!")
+

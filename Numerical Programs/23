@@ -1,0 +1,26 @@
+print("DRESS SHOPPING STORE")
+amount = float(input("Enter the dress amount (Rs): "))
+
+# Discount percentage (shorthand if ladder)
+discount_percent = (0  if amount < 1000 else
+                   10 if 1000 <= amount < 5000 else
+                   15 if 5000 <= amount < 10000 else
+                   20 if amount >= 10000 else 0)
+
+# Discount message (shorthand)
+res = ("No discount available for amount below Rs.1000" if amount < 1000 else
+       f"10% Discount" if 1000 <= amount < 5000 else
+       f"15% Discount" if 5000 <= amount < 10000 else
+       f"20% Discount" if amount >= 10000 else
+       "Invalid amount")
+
+# Calculate discount amount and final price
+discount_amount = (amount * discount_percent / 100) if discount_percent > 0 else 0
+final_amount = amount - discount_amount
+
+# Display results
+print(f"\nOriginal Amount: Rs.{amount:.2f}")
+print(res)
+print(f"Discount Amount: Rs.{discount_amount:.2f}")
+print(f"Final Amount: Rs.{final_amount:.2f}")
+print("\nThank you for visiting shopping store")
